@@ -34,7 +34,7 @@ $capsule->addConnection([
 
     "database" => "tiny-url",
 
-    "username" => "padmin",
+    "username" => "admin",
 
     "password" => "root"
 
