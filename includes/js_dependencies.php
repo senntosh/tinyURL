@@ -22,7 +22,6 @@
     $(document).ready(function () {
         $('#submit').on('click', function (event) {
             event.preventDefault();
-            alert('inside data');
             var formData = objectifyForm($('#tiny-url').serializeArray()),
                 handleSuccess = function(response){
                     console.log('ajax success',response);
@@ -35,7 +34,7 @@
                     }
                 },
                 handleFailure = function(response){
-                    console.log('ajax failure',response);
+                        $("<div class=\"alert alert-danger\">" +"Whoops! Something went wrong. Please try again later."+"</div>").prependTo('#tiny-url').delay(5000).fadeOut(400);
                 };
 
             $.post('/api.php',formData,null,'json').done(handleSuccess).fail(handleFailure);
